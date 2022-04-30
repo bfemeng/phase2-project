@@ -1,9 +1,22 @@
 {
-  "items": [
+  "inventory": [
     {
-      "id": 1,
-      "title": "handmade by tay",
-      "author": "Shante"
+      "id": 1001,
+      "name": "handmade by tay",
+      "quantity": 3
+    }
+  ],
+  "requirements": [
+    {
+      "id": 1001,
+      "content": "file taxes",
+      "due_date": "4/15"
+    }
+  ],
+  "todos": [
+    {
+      "id": 1001,
+      "content": "clean racks"
     }
   ]
 }
