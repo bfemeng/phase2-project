@@ -1,5 +1,4 @@
 import React from 'react';
-//import { Navbar } from 'react-bootstrap';
 import ReactDOM from 'react-dom';
 /* Add NavLink to import */
 import { BrowserRouter, Route, NavLink } from 'react-router-dom';
@@ -53,14 +52,14 @@ function Navbar() {
         TodoList
       </NavLink>
       <NavLink
-        to="/staterequirements"
+        to="/requirements"
         //exact
         style={linkStyles}
         activestyle={{
           background: "darkblue",
         }}
       >
-        StateRequirements
+        Requirements
       </NavLink>
     </div>
   );

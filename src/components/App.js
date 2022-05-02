@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes  } from 'react-router-dom';
 import Home from './Home';
 import Inventory from './Inventory';
 import TodoList from './TodoList';
-import StateRequirements from './StateRequirements';
+import Requirements from './Requirements';
 import Navbar from './Navbar';
 //import './src/App.css';
 
@@ -16,7 +16,7 @@ const App = () => {
           <Route path="/" element={<Home/>} />
           <Route path="/inventory" element={<Inventory/>} />
           <Route path="/todos" element={<TodoList/>} />
-          <Route path="/staterequirements" element={<StateRequirements/>} />
+          <Route path="/requirements" element={<Requirements/>} />
         </Routes>
       </div>
     </Router>
