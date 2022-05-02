@@ -29,7 +29,6 @@ const Inventory = () => {
   return (
     <div>
       <h1>Inventory </h1>
-      <button onClick={handleClick}>Click Me</button>
       <form onSubmit={handleSubmit}>
         <input type="text" placeholder="Add item" value={inventory} onChange={e => setInventory(e.target.value)} 
       />

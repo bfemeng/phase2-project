@@ -34,7 +34,6 @@ const Requirements = () => {
           onChange={(e) => setFiletaxes(e.target.checked)}
         />
       </label>
-      <button onClick={handleClick}>Click Me</button>
       <form onSubmit={handleSubmit}>
         <input type="text" placeholder="Add item" value={requirements} onChange={e => setRequirements(e.target.value)} 
       />
@@ -45,3 +44,4 @@ const Requirements = () => {
 }
 
 export default Requirements
+//      <button onClick={handleClick}>Click Me</button>

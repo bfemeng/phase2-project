@@ -27,7 +27,6 @@ const TodoList = () => {
     return (
         <div>
           <h1>Todo List </h1>
-          <button onClick={handleClick}>Click Me</button>
           <form onSubmit={handleSubmit}>
             <input type="text" placeholder="Add todo" value={todos} onChange={e => setTodos(e.target.value)} 
       />
