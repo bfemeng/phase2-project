@@ -12,9 +12,9 @@ const TodoList = () => {
         })
     }, [])
 
-    function handleClick(event) {
-        console.log(event)
-      }
+    // function handleClick(event) {
+    //     console.log(event)
+    //   }
       
     function handleChange(event) {
         console.log(event.target.value)
