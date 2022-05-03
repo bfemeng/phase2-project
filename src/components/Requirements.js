@@ -24,6 +24,7 @@ const Requirements = () => {
 
   return (
     <div>
+      <hr></hr>
       <h1>Requirements </h1>
        <label>
         File Taxes

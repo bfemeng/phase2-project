@@ -22,14 +22,29 @@ const TodoList = () => {
 
     function handleSubmit(event) {
         event.preventDefault()
+        const newTodo = {
+
+        }
         console.log("form submit")
+        fetch ('http://localhost3001/todos', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newTodo)
+        })
+        .then(r => r.json())
+        .then(data => {console.log(data)})
     }
+
+
     return (
         <div>
+            <hr></hr>
           <h1>Todo List </h1>
           <form onSubmit={handleSubmit}>
-            <input type="text" placeholder="Add todo" value={todos} onChange={e => setTodos(e.target.value)} 
-      />
+              <hr></hr>
+            <input type="text" placeholder="Add todo" value={todos} onChange={e => setTodos(e.target.value)} />
             <select onChange={handleChange}>
               <option value="1">High</option>
               <option value="2">Low</option>
