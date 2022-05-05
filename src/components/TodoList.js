@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 const TodoList = () => {
     const [todos, setTodos] = useState("");
     const [todoList, setTodolist] = useState([])
-    //console.log(todos)
+    //const [inputField, setInputField] = useState('');
 
     useEffect(() => {
         fetch("http://localhost:3001/todos")
@@ -54,7 +54,7 @@ const TodoList = () => {
               <option value="1">High</option>
               <option value="2">Low</option>
             </select>
-            <button type="submit">Submit todo</button>
+            <button type="submit">Submit</button>
           </form>
           <ul>
           {listItems}
@@ -62,7 +62,7 @@ const TodoList = () => {
         </div>
       )
     }
-
+  
 
 
 export default TodoList 
