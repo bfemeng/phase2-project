@@ -2,15 +2,17 @@ import React, { useState, useEffect } from 'react'
 
 const TodoList = () => {
     const [todos, setTodos] = useState("");
-    console.log(todos)
+    const [todoList, setTodolist] = useState([])
+    //console.log(todos)
 
     useEffect(() => {
         fetch("http://localhost:3001/todos")
         .then(res => res.json())
         .then(data => {
             console.log(data)
+            setTodolist(data)
         })
-    }, [])
+    }, [todoList])
 
     // function handleClick(event) {
     //     console.log(event)
@@ -22,20 +24,23 @@ const TodoList = () => {
 
     function handleSubmit(event) {
         event.preventDefault()
-        const newTodo = {
-
-        }
         console.log("form submit")
-        fetch ('http://localhost3001/todos', {
+        fetch ('http://localhost:3001/todos', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(newTodo)
+            body: JSON.stringify({content:todos})
         })
         .then(r => r.json())
         .then(data => {console.log(data)})
     }
+
+    const listItems = todoList.map((todoList) =>
+      <li key={todoList.content}>
+      {todoList.content}
+      </li>
+    );
 
 
     return (
@@ -51,6 +56,9 @@ const TodoList = () => {
             </select>
             <button type="submit">Submit todo</button>
           </form>
+          <ul>
+          {listItems}
+          </ul>
         </div>
       )
     }
@@ -58,7 +66,3 @@ const TodoList = () => {
 
 
 export default TodoList 
-
-// return (
-//     <div>TodoList</div>
-//   )

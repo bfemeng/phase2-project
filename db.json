@@ -15,8 +15,12 @@
   ],
   "todos": [
     {
-      "id": 1001,
-      "content": "clean racks"
+      "content": "dust",
+      "id": 1
+    },
+    {
+      "content": "clean",
+      "id": 2
     }
   ]
 }
