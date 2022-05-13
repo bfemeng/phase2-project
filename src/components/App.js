@@ -5,6 +5,7 @@ import Inventory from './Inventory';
 import TodoList from './TodoList';
 import Requirements from './Requirements';
 import Navbar from './Navbar';
+import './index.css';
 //import './src/App.css';
 
 const App = () => {

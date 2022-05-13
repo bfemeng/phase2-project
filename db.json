@@ -1,10 +1,6 @@
 {
   "inventory": [
-    {
-      "id": 1001,
-      "name": "handmade by tay",
-      "quantity": 3
-    }
+   
   ],
   "requirements": [
     {
@@ -14,29 +10,6 @@
     }
   ],
   "todos": [
-    {
-      "content": "clean",
-      "id": 1
-    },
-    {
-      "content": "",
-      "id": 2
-    },
-    {
-      "content": "dust",
-      "id": 3
-    },
-    {
-      "content": "draw",
-      "id": 4
-    },
-    {
-      "content": "pens",
-      "id": 5
-    },
-    {
-      "content": "organize",
-      "id": 6
-    }
+
   ]
 }

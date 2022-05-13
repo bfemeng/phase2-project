@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
+import './index.css';
 
 const TodoList = () => {
-    const [todos, setTodos] = useState("");
+    const [todos, setTodos, onDeleteToDo] = useState("");
     const [todoList, setTodolist] = useState([])
-    //const [inputField, setInputField] = useState('');
 
     useEffect(() => {
         fetch("http://localhost:3001/todos")
@@ -13,10 +13,6 @@ const TodoList = () => {
             setTodolist(data)
         })
     }, [todoList])
-
-    // function handleClick(event) {
-    //     console.log(event)
-    //   }
       
     function handleChange(event) {
         console.log(event.target.value)
@@ -42,6 +38,13 @@ const TodoList = () => {
       </li>
     );
 
+    function handleDelete() {
+      fetch(`http://localhost:3001/todos/`, {
+        method: "DELETE",
+      });
+    //   onDeleteTodo to remove todo from state
+      onDeleteToDo();
+    }
 
     return (
         <div>
@@ -54,7 +57,7 @@ const TodoList = () => {
               <option value="1">High</option>
               <option value="2">Low</option>
             </select>
-            <button type="submit">Submit</button>
+            <button className="delete-task" onClick={handleDelete} type="submit">Submit</button>
           </form>
           <ul>
           {listItems}
@@ -65,4 +68,4 @@ const TodoList = () => {
   
 
 
-export default TodoList 
+export default TodoList
