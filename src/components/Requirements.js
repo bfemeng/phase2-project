@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
+
 const Requirements = () => {
   const [filetaxes, setFiletaxes] = useState("");
   const [requirements, setRequirements] = useState("")
@@ -20,8 +21,19 @@ const Requirements = () => {
     function handleSubmit(event) {
       event.preventDefault()
       console.log("form submit")
-    }
+      fetch (`http://localhost:3001/requirements`, {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({content:requirements})
+      })
+      .then(r => r.text())
+      .then(data => {console.log(data)})
+  }
 
+    const listRequirements = Requirements.map((requirement) => <li>{requirements}</li>);
+    console.log(listRequirements)
 
   return (
     <div>
@@ -40,9 +52,11 @@ const Requirements = () => {
       />
         <button type="submit">Submit item</button>
       </form>
+      <ul>
+        {listRequirements}
+      </ul>
     </div> 
   )
 }
 
 export default Requirements
-//      <button onClick={handleClick}>Click Me</button>

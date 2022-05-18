@@ -1,7 +1,5 @@
 {
-  "inventory": [
-   
-  ],
+  "inventory": [],
   "requirements": [
     {
       "id": 1001,
@@ -10,6 +8,13 @@
     }
   ],
   "todos": [
-
+    {
+      "content": "dust",
+      "id": 1
+    },
+    {
+      "content": "dust",
+      "id": 2
+    }
   ]
 }

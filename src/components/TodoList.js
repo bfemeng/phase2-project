@@ -6,13 +6,13 @@ const TodoList = () => {
     const [todoList, setTodolist] = useState([])
 
     useEffect(() => {
-        fetch("http://localhost:3001/todos")
+        fetch(`http://localhost:3001/todos`)
         .then(res => res.json())
         .then(data => {
             console.log(data)
             setTodolist(data)
         })
-    }, [todoList])
+    }, [])
       
     function handleChange(event) {
         console.log(event.target.value)
@@ -21,22 +21,22 @@ const TodoList = () => {
     function handleSubmit(event) {
         event.preventDefault()
         console.log("form submit")
-        fetch ('http://localhost:3001/todos', {
+        fetch (`http://localhost:3001/todos`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({content:todos})
         })
-        .then(r => r.json())
+        .then(r => r.text())
         .then(data => {console.log(data)})
     }
 
-    const listItems = todoList.map((todoList) =>
-      <li key={todoList.content}>
-      {todoList.content}
-      </li>
-    );
+    const listItems = todoList.map(todo => <li>{todo.content}</li>);
+
+    function handleChange(event) {
+        console.log(event.target.value)
+    }
 
     function handleDelete() {
       fetch(`http://localhost:3001/todos/`, {
