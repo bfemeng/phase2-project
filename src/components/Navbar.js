@@ -51,16 +51,6 @@ function Navbar() {
       >
         TodoList
       </NavLink>
-      <NavLink
-        to="/requirements"
-        //exact
-        style={linkStyles}
-        activestyle={{
-          background: "darkblue",
-        }}
-      >
-        Requirements
-      </NavLink>
     </div>
   );
 }
