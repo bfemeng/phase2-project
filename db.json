@@ -1,20 +1,10 @@
 {
   "inventory": [],
-  "requirements": [
-    {
-      "id": 1001,
-      "content": "file taxes",
-      "due_date": "4/15"
-    }
-  ],
+  "requirements": [],
   "todos": [
     {
       "content": "dust",
       "id": 1
-    },
-    {
-      "content": "dust",
-      "id": 2
     }
   ]
 }

@@ -6,11 +6,7 @@ import { faChevronRight, faChevronLeft, faCircle, faCheckCircle, faPlus } from '
 const Inventory = () => {
   const [inventory, setInventory] = useState([]);
   console.log(inventory)
-  const [items, setItems] = useState([
-		// { itemName: 'item 1', quantity: 1, isSelected: false },
-		// { itemName: 'item 2', quantity: 3, isSelected: true },
-		// { itemName: 'item 3', quantity: 2, isSelected: false },
-	]);
+  const [items, setItems] = useState([]);
   
   useEffect(() => {
       fetch("http://localhost:3001/inventory")
@@ -20,22 +16,8 @@ const Inventory = () => {
       })
   }, [])
 
-
-//   function handleClick(event) {
-//     console.log(event)
-//   }
-
-//   function handleChange(event) {
-//     console.log(event.target.value)
-//   }
-
-  // function handleSubmit(event) {
-  //   event.preventDefault()
-  //   console.log("form submit")
-  // }
-
 	const [inputValue, setInputValue] = useState('');
-	const [totalItemCount, setTotalItemCount] = useState(6);
+	const [totalItemCount, setTotalItemCount] = useState();
 
 	const handleAddButtonClick = () => {
 		const newItem = {
@@ -53,27 +35,21 @@ const Inventory = () => {
 
 	const handleQuantityIncrease = (index) => {
 		const newItems = [...items];
-
 		newItems[index].quantity++;
-
 		setItems(newItems);
 		calculateTotal();
 	};
 
 	const handleQuantityDecrease = (index) => {
 		const newItems = [...items];
-
 		newItems[index].quantity--;
-
 		setItems(newItems);
 		calculateTotal();
 	};
 
 	const toggleComplete = (index) => {
 		const newItems = [...items];
-
 		newItems[index].isSelected = !newItems[index].isSelected;
-
 		setItems(newItems);
 	};
 

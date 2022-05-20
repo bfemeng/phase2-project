@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
+import './index.css';
 
+const RequirementsList = () => {
+  const [requirements] = useState([]);
+  const [requirementsList, setRequirementsList, onDeleteToDo] = useState([]);
 
-const Requirements = () => {
-  const [filetaxes, setFiletaxes] = useState("");
-  const [requirements, setRequirements] = useState("")
-  console.log(requirements)
   
     useEffect(() => {
         fetch("http://localhost:3001/requirements")
@@ -32,31 +32,40 @@ const Requirements = () => {
       .then(data => {console.log(data)})
   }
 
-    const listRequirements = Requirements.map((requirement) => <li>{requirements}</li>);
-    console.log(listRequirements)
+    // const listRequirements = requirementsList.map(requirement => <li>{requirement.content}</li>);
+    // console.log(listRequirements)
+
+    function handleDelete() {
+      fetch(`http://localhost:3001/requirements/`, {
+        method: "DELETE",
+      });
+    //   onDeleteTodo to remove todo from state
+      onDeleteToDo();
+    }
 
   return (
     <div>
       <h1>Requirements </h1>
-       <label>
+       {/* <label>
         File Taxes
         <input
           type="checkbox"
           id="taxes"
-          checked={filetaxes}
-          onChange={(e) => setFiletaxes(e.target.checked)}
+          //checked={filetaxes}
+          //onChange={(e) => setFiletaxes(e.target.checked)}
         />
-      </label>
+      </label> */}
       <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Add item" value={requirements} onChange={e => setRequirements(e.target.value)} 
+        <input type="text" placeholder="Add requirement" value={requirements} onChange={e => setRequirementsList(e.target.value)} 
       />
         <button type="submit">Submit item</button>
+        {/* <button className="delete-task" onClick={handleDelete} type="submit">Delete</button> */}
       </form>
-      <ul>
+      {/* <ul>
         {listRequirements}
-      </ul>
+      </ul> */}
     </div> 
   )
 }
 
-export default Requirements
+export default RequirementsList
