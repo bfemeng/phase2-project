@@ -23,7 +23,6 @@ function Form() {
     const formData = { todos: todos };
     const dataArray = [...submittedData, formData];
     setSubmittedData(dataArray);
-    setTodos("");
   }
 
   useEffect(() => {
