@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import './index.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight, faChevronLeft, faCircle, faCheckCircle, faPlus } from '@fortawesome/free-solid-svg-icons';
@@ -7,17 +7,23 @@ const Inventory = () => {
   const [inventory, setInventory] = useState([]);
   console.log(inventory)
   const [items, setItems] = useState([]);
-  
-  useEffect(() => {
-      fetch("http://localhost:3001/inventory")
-      .then(res => res.json())
-      .then(data => {
-          console.log(data)
-      })
-  }, [])
 
-	const [inputValue, setInputValue] = useState('');
-	const [totalItemCount, setTotalItemCount] = useState();
+	const [inputValue, setInputValue] = useState([]);
+	const [totalItemCount, setTotalItemCount] = useState([]);
+
+	function handleSubmit(e) {
+		e.preventDefault();
+		const itemData = {};
+		fetch("http://localhost:3001/inventory", {
+		  method: "POST",
+		  headers: {
+			"Content-Type": "application/json",
+		  },
+		  body: JSON.stringify(itemData),
+		})
+		  .then((r) => r.json())
+		  .then((newItem) => console.log(newItem));
+	  }
 
 	const handleAddButtonClick = () => {
 		const newItem = {
@@ -66,7 +72,7 @@ const Inventory = () => {
 		<div className='app-background'>
 			<div className='main-container'>
 				<div className='add-item-box'>
-					<input value={inputValue} onChange={(event) => setInputValue(event.target.value)} className='add-item-input' placeholder='Add an item...' />
+					<input onSubmit={handleSubmit} value={inputValue} onChange={(event) => setInputValue(event.target.value)} className='add-item-input' placeholder='Add an item...' />
 					<FontAwesomeIcon icon={faPlus} onClick={() => handleAddButtonClick()} />
 				</div>
 				<div className='item-list'>

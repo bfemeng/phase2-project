@@ -1,4 +1,41 @@
 {
   "inventory": [],
-  "todos": []
+  "todos": [
+    {
+      "content": "green",
+      "id": 1
+    },
+    {
+      "content": "",
+      "id": 2
+    },
+    {
+      "content": "red",
+      "id": 3
+    },
+    {
+      "content": "pink",
+      "id": 4
+    },
+    {
+      "content": "yellow",
+      "id": 5
+    },
+    {
+      "content": "red",
+      "id": 6
+    },
+    {
+      "content": "pink",
+      "id": 7
+    },
+    {
+      "content": "green",
+      "id": 8
+    },
+    {
+      "content": "black",
+      "id": 9
+    }
+  ]
 }
