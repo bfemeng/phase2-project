@@ -2,44 +2,24 @@
   "inventory": [],
   "todos": [
     {
-      "content": "green",
+      "content": "YES",
       "id": 1
     },
     {
-      "content": "",
+      "content": "Finally",
       "id": 2
     },
     {
-      "content": "red",
+      "content": "Got ",
       "id": 3
     },
     {
-      "content": "pink",
+      "content": "",
       "id": 4
     },
     {
-      "content": "yellow",
+      "content": "Help",
       "id": 5
-    },
-    {
-      "content": "red",
-      "id": 6
-    },
-    {
-      "content": "pink",
-      "id": 7
-    },
-    {
-      "content": "green",
-      "id": 8
-    },
-    {
-      "content": "black",
-      "id": 9
-    },
-    {
-      "content": "dust",
-      "id": 10
     }
   ]
 }

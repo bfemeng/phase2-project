@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 
 function Form() {
-  const [todos, setTodos] = useState([]);
+  const [todo, setTodo] = useState("");
   const [submittedData, setSubmittedData] = useState([]);
 
   function handleToDosChange(event) {
-    setTodos(event.target.value);
+    setTodo(event.target.value);
   }
 
   function handleSubmit(event) {
@@ -15,14 +15,17 @@ function Form() {
       headers: {
           'Content-Type': 'application/json'
       },
-      body: JSON.stringify({content:todos})
+      body: JSON.stringify({content:todo})
   })
-  .then(r => r.text())
-  .then(data => {console.log(data)})
-
-    const formData = { todos: todos };
-    const dataArray = [...submittedData, formData];
+  .then(r => r.json())
+  .then(data => {const dataArray = [...submittedData, data];
     setSubmittedData(dataArray);
+    setTodo("");})
+
+    // const formData = { todo: todo };
+    // const dataArray = [...submittedData, data];
+    // setSubmittedData(dataArray);
+    // setTodo("");
   }
 
   useEffect(() => {
@@ -34,7 +37,7 @@ function Form() {
   const listOfSubmissions = submittedData.map((data, index) => {
     return (
       <div key={index}>
-        {data.todos}
+        {data.content}
       </div>
     );
   });
@@ -45,7 +48,7 @@ function Form() {
        <h3>Todos</h3>
       <form onSubmit={handleSubmit}>
       <div>{submittedData.map((data) => data.name)}</div>
-        <input type="text" className="checkbox" onChange={handleToDosChange} value={todos} />
+        <input type="text" placeholder="Start typing..." onChange={handleToDosChange} value={todo} />
         <button type="submit">Submit</button>
       </form>
       <ol>
@@ -61,7 +64,7 @@ export default Form;
 
 
 
-// import React, { useState, useEffect } from 'react'
+// import React, { useState, useEffect } from 'react
 // import { useParams } from "react-router-dom"
 // import './index.css';
 // // import Form from './Form';
