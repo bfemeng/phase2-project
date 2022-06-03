@@ -1,5 +1,9 @@
 {
-  "items": [],
+  "items": [
+    {
+      "id": 1
+    }
+  ],
   "todos": [
     {
       "content": "YES",

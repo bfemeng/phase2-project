@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './index.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight, faChevronLeft, faCircle, faCheckCircle, faPlus } from '@fortawesome/free-solid-svg-icons';
 
 const Inventory = () => {
-  const [inventory, setInventory] = useState([]);
+//   const [inventory, setInventory] = useState([]);
   const [items, setItems] = useState([]);
 
 	const [inputValue, setInputValue] = useState([]);
@@ -13,14 +13,13 @@ const Inventory = () => {
 	function handleSubmit(e) {
 		e.preventDefault();
 		const itemData = {
-			todo: { 
+			inventory: { 
                 items: items, 
-                completed: false 
             }
         } 
 		console.log(itemData)
-		
-		fetch("http://localhost:3001/inventory", {
+
+		fetch("http://localhost:3001/items", {
 		  method: "POST",
 		  headers: {
 			"Content-Type": "application/json",
@@ -31,6 +30,20 @@ const Inventory = () => {
 		  .then((r) => r.json())
 		  .then((newItem) => console.log(newItem));
 	  }
+
+	  useEffect(() => {
+		fetch('http://localhost:3001/items')
+		.then((r) => r.json())
+		.then(setItems);
+	}, []);
+
+	const inventoryList= items.map((data, index) => {
+		return (
+		  <div key={index}>
+			{data.itemData}
+		  </div>
+		);
+	  });
 
 	const handleAddButtonClick = () => {
 		const newItem = {
@@ -78,10 +91,16 @@ const Inventory = () => {
 	return (
 		<div className='app-background'>
 			<div className='main-container'>
+				<form onSubmit={handleSubmit}>
 				<div className='add-item-box'>
-					<input onSubmit={handleSubmit} value={inputValue} onChange={(event) => setInputValue(event.target.value)} className='add-item-input' placeholder='Add an item...' />
+					<input value={inputValue} onChange={(event) => setInputValue(event.target.value)} className='add-item-input' placeholder='Add an item...' />
 					<FontAwesomeIcon icon={faPlus} onClick={() => handleAddButtonClick()} />
 				</div>
+				<input type="submit" value="Submit" />
+				</form>
+					<ol>
+       					{inventoryList} 
+      				</ol> 
 				<div className='item-list'>
 					{items.map((item, index) => (
 						<div className='item-container'>
