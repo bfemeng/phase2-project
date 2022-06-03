@@ -5,7 +5,6 @@ import { faChevronRight, faChevronLeft, faCircle, faCheckCircle, faPlus } from '
 
 const Inventory = () => {
   const [inventory, setInventory] = useState([]);
-  console.log(inventory)
   const [items, setItems] = useState([]);
 
 	const [inputValue, setInputValue] = useState([]);
@@ -13,13 +12,21 @@ const Inventory = () => {
 
 	function handleSubmit(e) {
 		e.preventDefault();
-		const itemData = {};
+		const itemData = {
+			todo: { 
+                items: items, 
+                completed: false 
+            }
+        } 
+		console.log(itemData)
+		
 		fetch("http://localhost:3001/inventory", {
 		  method: "POST",
 		  headers: {
 			"Content-Type": "application/json",
+			 "Accept": "application/json",
 		  },
-		  body: JSON.stringify(itemData),
+		  body: JSON.stringify(itemData)
 		})
 		  .then((r) => r.json())
 		  .then((newItem) => console.log(newItem));

@@ -1,5 +1,5 @@
 {
-  "inventory": [],
+  "items": [],
   "todos": [
     {
       "content": "YES",
@@ -20,6 +20,14 @@
     {
       "content": "Help",
       "id": 5
+    },
+    {
+      "content": "hello",
+      "id": 6
+    },
+    {
+      "content": "dust",
+      "id": 7
     }
   ]
 }
