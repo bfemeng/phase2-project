@@ -7,57 +7,66 @@ const Inventory = () => {
 //   const [inventory, setInventory] = useState([]);
   const [items, setItems] = useState([]);
 
-	const [inputValue, setInputValue] = useState([]);
+	const [inputValue, setInputValue] = useState("");
 	const [totalItemCount, setTotalItemCount] = useState([]);
 
-	function handleSubmit(e) {
-		e.preventDefault();
-		const itemData = {
-			inventory: { 
-                items: items, 
-            }
-        } 
-		console.log(itemData)
+	// function handleSubmit(e) {
+	// 	e.preventDefault();
+	// 	const itemData = {
+	// 		inventory: { 
+    //             items: items, 
+    //         }
+    //     } 
+	// 	console.log(itemData)
 
-		fetch("http://localhost:3001/items", {
-		  method: "POST",
-		  headers: {
-			"Content-Type": "application/json",
-			 "Accept": "application/json",
-		  },
-		  body: JSON.stringify(itemData)
-		})
-		  .then((r) => r.json())
-		  .then((newItem) => console.log(newItem));
-	  }
+	// 	fetch("http://localhost:3001/items", {
+	// 	  method: "POST",
+	// 	  headers: {
+	// 		"Content-Type": "application/json",
+	// 		 "Accept": "application/json",
+	// 	  },
+	// 	  body: JSON.stringify(itemData)
+	// 	})
+	// 	  .then((r) => r.json())
+	// 	  .then((newItem) => console.log(newItem));
+	//   }
 
-	  useEffect(() => {
-		fetch('http://localhost:3001/items')
-		.then((r) => r.json())
-		.then(setItems);
-	}, []);
+	//   useEffect(() => {
+	// 	fetch('http://localhost:3001/items')
+	// 	.then((r) => r.json())
+	// 	.then(setItems);
+	// }, []);
 
-	const inventoryList= items.map((data, index) => {
+	const inventoryList= items.map((data, id) => {
 		return (
-		  <div key={index}>
+		  <div key={id}>
 			{data.itemData}
 		  </div>
 		);
 	  });
 
-	const handleAddButtonClick = () => {
-		const newItem = {
-			itemName: inputValue,
-			quantity: 1,
-			isSelected: false,
-		};
-
-		const newItems = [...items, newItem];
-
-		setItems(newItems);
-		setInputValue('');
-		calculateTotal();
+	function handleAddButtonClick(e) {
+		e.preventDefault();
+		fetch("http://localhost:3001/items", {
+			method: "POST",
+			headers: {
+			  "Content-Type": "application/json",
+			   "Accept": "application/json",
+			},
+			body: JSON.stringify({inventoryItem: inputValue})
+		  })
+			.then(r => r.json())
+			.then(data => { const newItem = [...items, data];
+			setItems(newItem);
+			setInputValue("");
+			calculateTotal();}) 
 	};
+
+	   useEffect(() => {
+			fetch('http://localhost:3001/items')
+			.then((r) => r.json())
+			.then(data => setItems(data));
+		}, []);
 
 	const handleQuantityIncrease = (index) => {
 		const newItems = [...items];
@@ -91,12 +100,11 @@ const Inventory = () => {
 	return (
 		<div className='app-background'>
 			<div className='main-container'>
-				<form onSubmit={handleSubmit}>
+				<form>
 				<div className='add-item-box'>
 					<input value={inputValue} onChange={(event) => setInputValue(event.target.value)} className='add-item-input' placeholder='Add an item...' />
-					<FontAwesomeIcon icon={faPlus} onClick={() => handleAddButtonClick()} />
+					<FontAwesomeIcon icon={faPlus} onClick={(e) => handleAddButtonClick(e)} />
 				</div>
-				<input type="submit" value="Submit" />
 				</form>
 					<ol>
        					{inventoryList} 

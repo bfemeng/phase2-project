@@ -1,6 +1,7 @@
 {
   "items": [
     {
+      "inventoryItem": "shoes",
       "id": 1
     }
   ],
@@ -32,6 +33,18 @@
     {
       "content": "dust",
       "id": 7
+    },
+    {
+      "content": "Clean desk",
+      "id": 8
+    },
+    {
+      "content": "agvawedgawr",
+      "id": 9
+    },
+    {
+      "content": "aergw",
+      "id": 10
     }
   ]
 }
