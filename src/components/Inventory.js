@@ -4,9 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight, faChevronLeft, faCircle, faCheckCircle, faPlus } from '@fortawesome/free-solid-svg-icons';
 
 const Inventory = () => {
-//   const [inventory, setInventory] = useState([]);
-  const [items, setItems] = useState([]);
-
+  	const [items, setItems] = useState([]);
 	const [inputValue, setInputValue] = useState("");
 	const [totalItemCount, setTotalItemCount] = useState([]);
 
@@ -26,13 +24,18 @@ const Inventory = () => {
 			  "Content-Type": "application/json",
 			   "Accept": "application/json",
 			},
-			body: JSON.stringify({inventoryItem: inputValue})
+			body: JSON.stringify({
+				inventoryItem: inputValue, 
+				quantity: 1
+			})
 		  })
 			.then(r => r.json())
-			.then(data => { const newItem = [...items, data];
-			setItems(newItem);
-			setInputValue("");
-			calculateTotal();}) 
+			.then(data => { 
+				const newItems = [...items, data];
+				setItems(newItems);
+				setInputValue("");
+				calculateTotal();
+			}) 
 	};
 
 	   useEffect(() => {
@@ -62,11 +65,8 @@ const Inventory = () => {
 	};
 
 	const calculateTotal = () => {
-		// const newItems = [...items];
-		const totalItemCount = items.reduce((total, item) => {
-			return parseInt(total.quantity) + parseInt(item.quantity);
-		});
-
+		const newItems = [...items];
+		newItems.reduce((item, total) => item + total.quantity, 0);
 		setTotalItemCount(totalItemCount);
 	};
 

@@ -2,13 +2,18 @@
   "items": [
     {
       "inventoryItem": "shoes",
-      "quantity": "1",
+      "quantity": 1,
       "id": 1
     },
     {
       "inventoryItem": "shirt",
-      "quantity": "1",
+      "quantity": 1,
       "id": 2
+    },
+    {
+      "inventoryItem": "hat",
+      "quantity": 1,
+      "id": 3
     }
   ],
   "todos": [
