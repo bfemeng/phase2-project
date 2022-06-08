@@ -2,7 +2,13 @@
   "items": [
     {
       "inventoryItem": "shoes",
+      "quantity": "1",
       "id": 1
+    },
+    {
+      "inventoryItem": "shirt",
+      "quantity": "1",
+      "id": 2
     }
   ],
   "todos": [
@@ -45,6 +51,14 @@
     {
       "content": "aergw",
       "id": 10
+    },
+    {
+      "content": "cddxac",
+      "id": 11
+    },
+    {
+      "content": "",
+      "id": 12
     }
   ]
 }

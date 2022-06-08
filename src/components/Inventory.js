@@ -10,33 +10,6 @@ const Inventory = () => {
 	const [inputValue, setInputValue] = useState("");
 	const [totalItemCount, setTotalItemCount] = useState([]);
 
-	// function handleSubmit(e) {
-	// 	e.preventDefault();
-	// 	const itemData = {
-	// 		inventory: { 
-    //             items: items, 
-    //         }
-    //     } 
-	// 	console.log(itemData)
-
-	// 	fetch("http://localhost:3001/items", {
-	// 	  method: "POST",
-	// 	  headers: {
-	// 		"Content-Type": "application/json",
-	// 		 "Accept": "application/json",
-	// 	  },
-	// 	  body: JSON.stringify(itemData)
-	// 	})
-	// 	  .then((r) => r.json())
-	// 	  .then((newItem) => console.log(newItem));
-	//   }
-
-	//   useEffect(() => {
-	// 	fetch('http://localhost:3001/items')
-	// 	.then((r) => r.json())
-	// 	.then(setItems);
-	// }, []);
-
 	const inventoryList= items.map((data, id) => {
 		return (
 		  <div key={id}>
@@ -89,9 +62,10 @@ const Inventory = () => {
 	};
 
 	const calculateTotal = () => {
+		// const newItems = [...items];
 		const totalItemCount = items.reduce((total, item) => {
-			return total + item.quantity;
-		}, 0);
+			return parseInt(total.quantity) + parseInt(item.quantity);
+		});
 
 		setTotalItemCount(totalItemCount);
 	};
@@ -115,11 +89,13 @@ const Inventory = () => {
 							<div className='item-name' onClick={() => toggleComplete(index)}>
 								{item.isSelected ? (
 									<>
+									<h1>{item.inventoryItem}</h1>
 										<FontAwesomeIcon icon={faCheckCircle} />
 										<span className='completed'>{item.itemName}</span>
 									</>
 								) : (
 									<>
+									<h1>{item.inventoryItem}</h1>
 										<FontAwesomeIcon icon={faCircle} />
 										<span>{item.itemName}</span>
 									</>
