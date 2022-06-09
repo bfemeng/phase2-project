@@ -2,11 +2,14 @@ import React, { useState, useEffect } from 'react'
 import './index.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight, faChevronLeft, faCircle, faCheckCircle, faPlus } from '@fortawesome/free-solid-svg-icons';
+import Header from './Header'
 
 const Inventory = () => {
+	const [itemCount, setItemCount] = useState(0);
   	const [items, setItems] = useState([]);
 	const [inputValue, setInputValue] = useState("");
-	const [totalItemCount, setTotalItemCount] = useState([]);
+	// const [totalItemCount, setTotalItemCount] = useState(0);
+	// const [itemCount, setItemCount] = useState(0);
 
 	const inventoryList= items.map((data, id) => {
 		return (
@@ -34,28 +37,32 @@ const Inventory = () => {
 				const newItems = [...items, data];
 				setItems(newItems);
 				setInputValue("");
-				calculateTotal();
+				setItemCount(newItems.reduce((item, total) => item + total.quantity, 0));
 			}) 
 	};
 
 	   useEffect(() => {
 			fetch('http://localhost:3001/items')
 			.then((r) => r.json())
-			.then(data => setItems(data));
-		}, []);
+			.then(data => {
+				setItems(data)
+				setItemCount(data.reduce((item, total) => item + total.quantity, 0))
+				console.log("count", data.reduce((item, total) => item + total.quantity, 0))
+			})
+		}, [])
 
 	const handleQuantityIncrease = (index) => {
 		const newItems = [...items];
 		newItems[index].quantity++;
 		setItems(newItems);
-		calculateTotal();
+		setItemCount(newItems.reduce((item, total) => item + total.quantity, 0));
 	};
 
 	const handleQuantityDecrease = (index) => {
 		const newItems = [...items];
 		newItems[index].quantity--;
 		setItems(newItems);
-		calculateTotal();
+		setItemCount(newItems.reduce((item, total) => item + total.quantity, 0));
 	};
 
 	const toggleComplete = (index) => {
@@ -64,16 +71,12 @@ const Inventory = () => {
 		setItems(newItems);
 	};
 
-	const calculateTotal = () => {
-		const newItems = [...items];
-		newItems.reduce((item, total) => item + total.quantity, 0);
-		setTotalItemCount(totalItemCount);
-	};
-
+	console.log(items)
   
 	return (
 		<div className='app-background'>
 			<div className='main-container'>
+				<Header/>
 				<form>
 				<div className='add-item-box'>
 					<input value={inputValue} onChange={(event) => setInputValue(event.target.value)} className='add-item-input' placeholder='Add an item...' />
@@ -113,7 +116,7 @@ const Inventory = () => {
 						</div>
 					))}
 				</div>
-				<div className='total'>Total: {totalItemCount}</div>
+				<div className='total'>Total: {itemCount}</div>
 			</div>
 		</div>
 	);

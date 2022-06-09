@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Header from './Header'
 // import './indextodos.css';
 
 function Form() {
@@ -41,6 +42,7 @@ function Form() {
   
   return (
     <div>
+      <Header/>
        <h3>Tasks to Take Care Of </h3>
         <form onSubmit={handleSubmit}>
           <div>{submittedData.map((data) => data.name)}</div>
