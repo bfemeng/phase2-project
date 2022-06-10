@@ -19,19 +19,24 @@
       "inventoryItem": "jacket",
       "quantity": 1,
       "id": 4
+    },
+    {
+      "inventoryItem": "Beads",
+      "quantity": 1,
+      "id": 5
     }
   ],
   "todos": [
     {
-      "content": "YES",
+      "content": "Clean Desk ",
       "id": 1
     },
     {
-      "content": "Finally",
+      "content": "File Receipts",
       "id": 2
     },
     {
-      "content": "Got ",
+      "content": "Hire Assistant",
       "id": 3
     },
     {
@@ -39,36 +44,12 @@
       "id": 4
     },
     {
-      "content": "Help",
+      "content": "",
       "id": 5
     },
     {
-      "content": "hello",
-      "id": 6
-    },
-    {
-      "content": "dust",
-      "id": 7
-    },
-    {
-      "content": "Clean desk",
-      "id": 8
-    },
-    {
-      "content": "agvawedgawr",
-      "id": 9
-    },
-    {
-      "content": "aergw",
-      "id": 10
-    },
-    {
-      "content": "cddxac",
-      "id": 11
-    },
-    {
       "content": "",
-      "id": 12
+      "id": 6
     }
   ]
 }

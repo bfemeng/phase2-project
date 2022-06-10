@@ -1,5 +1,5 @@
 * {
-  font-size: 20px;
+  font-size: 25px;
 }
 
 body {
@@ -10,8 +10,9 @@ body {
 }
 
 .App {
-  font-family: sans-serif;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   text-align: center;
+  background: #000000;
 }
 
 .app-background {
@@ -89,7 +90,6 @@ input:focus {
 }
 
 .item-action-buttons {
-  /* width: 30%; */
   display: flex;
   justify-content: space-between;
 }
@@ -117,10 +117,11 @@ input:focus {
 }
 
 button {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   background: transparent;
   border: none;
   margin: 3px;
-  color: #28181c;
+  color: #e54a71;
 }
 button:focus {
   outline: 0;

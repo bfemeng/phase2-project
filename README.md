@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# Table of Contents
+Table of contents
+Introduction
+Installation
+Usage
+Known issues and limitations
+Tech Stack
+Getting help
+Contributing
+License
+Authors and history
+Acknowledgments
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Introduction
+Sometimes it is better to have an online record of taks to take care of and a correct count of item inventory. Task Me is a personal assistant to help you better maintain your business. 
 
-## Available Scripts
 
-In the project directory, you can run:
+### Installation
 
-### `npm start`
+To run this program a user needs to have access to the internet and a standard browser.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Usage
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+After you are welcomed to the application you can navigate to eithe the Inventory tab or the TodoList tab. To add inventory items simply click into the "Add an Item" field and type your item. When you click the plus icon you will see your item appear added to the list. If you would like to add more than 1 you can click on the right arrow on the item line. You will see ther count increase. To subtract items you can click on the left arrow. Placing a click on the circle allows you to mark that item as complete if you have counted all of your inventory. By clicking on the TodoList tab you enter the todolist portion of the app. Click into the "Start Typimg..." field and click "Add to List" or press the enter button to add items to the list. 
 
-### `npm test`
+### Known Issues and limitations
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+You cannot delete items added to the Todolist. It is a functionality I plan to implement at a later time. 
 
-### `npm run build`
+### Tech Stack
+React.js
+Custom CSS
+JSON Server
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Getting Help
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+If you need any assistance with this program please contact me at kennedy2110@gmail.com or on Twiiter/Instagram @TeInTech.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Contributing
 
-### `npm run eject`
+A huge thank you to each of the Flatiron school staff that helped me when I was stuck on a line of code or had trouble executing a concept. Special recognition to my Cohort Lead Nancy Noyes as she often planted me in front of the "I believe" button so I could confidently push it when I didn't feel so confident in my abilities to produce a functioning beginner's app. 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### License
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+MIT License
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Copyright (c) 2022, Shante Torres
 
-## Learn More
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
-### Code Splitting
+### Authors and history
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Created by Shante Torres. A wife, mom, and dreamer. 
 
-### Analyzing the Bundle Size
+### Acknowledgements
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Thank you to MDN Web Docs, StackOverflow, W3Schools, and FontAwesome for being a wonderful resource in addition to my Flatiron Curriculum. Thanks to my cohort Lead Nancy Noyes for all the 1 on 1s. A big shout out to fellow Flatiron students Christy, Kyrian, Juan, Natasha, and Lionel for helping me at some point or another. Whether troubleshooting or just giving me an inspiring push you are appreciated. 

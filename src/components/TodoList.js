@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Header from './Header'
-// import './indextodos.css';
+import worktogether from '../images/worktogether.jpg'
+
 
 function Form() {
   const [todo, setTodo] = useState("");
@@ -47,11 +48,12 @@ function Form() {
         <form onSubmit={handleSubmit}>
           <div>{submittedData.map((data) => data.name)}</div>
             <input type="text" placeholder="Start typing..." onChange={handleToDosChange} value={todo} />
-            <button type="submit">Add to List</button>
+            <button type="submit">Add to List </button>
         </form>
       <ol>
        {listOfSubmissions} 
       </ol> 
+      <img src={worktogether} className="image" />
     </div>
   );
 }
