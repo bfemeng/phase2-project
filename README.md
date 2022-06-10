@@ -67,7 +67,7 @@ SOFTWARE.
 
 ### Authors and history
 
-Created by Shante Torres. A wife, mom, and dreamer. 
+Created by Shante Torres. A *wife, mom, and dreamer.* 
 
 ### Acknowledgements
 
