@@ -28,9 +28,9 @@ After you are welcomed to the application you can navigate to eithe the Inventor
 You cannot delete items added to the Todolist. It is a functionality I plan to implement at a later time. 
 
 ### Tech Stack
-React.js
-Custom CSS
-JSON Server
+* React.js
+* Custom CSS
+* JSON Server
 
 ### Getting Help
 
