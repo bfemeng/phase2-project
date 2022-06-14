@@ -8,8 +8,6 @@ const Inventory = () => {
 	const [itemCount, setItemCount] = useState(0);
   	const [items, setItems] = useState([]);
 	const [inputValue, setInputValue] = useState("");
-	// const [totalItemCount, setTotalItemCount] = useState(0);
-	// const [itemCount, setItemCount] = useState(0);
 
 	const inventoryList= items.map((data, id) => {
 		return (

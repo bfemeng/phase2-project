@@ -12,7 +12,7 @@ Authors and history
 Acknowledgments
 
 ### Introduction
-Sometimes it is better to have an online record of taks to take care of and a correct count of item inventory. Task Me is a personal assistant to help you better maintain your business. 
+Sometimes it is better to have an online record of tasks to take care of and a correct count of item inventory. Task Me is a personal assistant to help you better maintain your business. 
 
 
 ### Installation
